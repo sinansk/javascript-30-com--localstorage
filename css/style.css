@@ -1,0 +1,135 @@
+html {
+  box-sizing: border-box;
+  background: url("../oh-la-la.jpeg") center no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+svg {
+  fill: white;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 50%;
+  max-width: 200px;
+  min-width: 150px;
+  height: 30%;
+  margin-bottom: 30px;
+}
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.wrapper {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 60%;
+  flex: 1 1 auto;
+  background: rgba(255, 255, 255, 0.44);
+  border-radius: 1px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+h2 {
+  text-align: center;
+  margin: 0;
+  font-weight: 200;
+}
+
+.plates {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  list-style: none;
+  font-size: x-large;
+}
+
+.plates li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+  font-weight: 200;
+  display: flex;
+}
+
+.plates label {
+  flex: 1;
+  cursor: pointer;
+}
+
+.plates input {
+  display: none;
+}
+
+.plates input + label:before {
+  content: "⬜️";
+  margin-right: 10px;
+}
+
+.plates input:checked + label:before {
+  content: "🌮";
+}
+
+.add-items {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.add-items input {
+  padding: 10px;
+  outline: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.clear {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  font-size: x-large;
+  padding: 7.5px 0;
+  margin-bottom: -15px;
+}
+
+.clear-all {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.clear>* {
+  outline: 0;  
+}
+
+.clear input[type="checkbox"]:first-of-type {
+  display: none;
+}
+
+.clear input[type="checkbox"]:first-of-type + label:before {
+  content: "⬜️";
+  justify-self: flex-start;  
+}
+
+.clear input[type="checkbox"]:first-of-type:checked + label:before {
+  content: "🌮";
+}
