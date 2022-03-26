@@ -43,11 +43,14 @@ function selectAll(e) {
   const allCheck = items.every((item) => item.done === true);
   if (el.classList.contains("clearCheck")) {
     console.log(el);
-        if (allCheck && el.done === true) {
+        if (allCheck && el.checked); {
           items.forEach((item) => (item.done = false));
-        } else {
+        } if (!allCheck && !el.checked) {
+          items.forEach((item) => (item.done = true));
+        } if (allCheck && !el.checked) {
           items.forEach((item) => (item.done = true));
         }
+        el.checked = !el.checked;
         localStorage.setItem('items', JSON.stringify(items));
         populateList(items, itemsList);
   } else if (e.target.classList.contains("clear-all")) {
